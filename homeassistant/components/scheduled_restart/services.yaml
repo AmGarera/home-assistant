@@ -1,0 +1,7 @@
+request_restart:
+  fields:
+    reason:
+      selector:
+        text:
+
+cancel_restart:

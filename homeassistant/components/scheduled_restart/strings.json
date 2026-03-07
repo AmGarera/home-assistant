@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up scheduled restart",
+        "description": "Configure when Home Assistant should restart when a restart is requested.",
+        "data": {
+          "restart_time": "Daily restart time",
+          "restart_days": "Days to allow restart"
+        },
+        "data_description": {
+          "restart_time": "The time of day when a pending restart will be executed.",
+          "restart_days": "Restarts will only be executed on the selected days."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Scheduled restart options",
+        "data": {
+          "restart_time": "Daily restart time",
+          "restart_days": "Days to allow restart"
+        },
+        "data_description": {
+          "restart_time": "The time of day when a pending restart will be executed.",
+          "restart_days": "Restarts will only be executed on the selected days."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "restart_pending": {
+        "name": "Restart pending"
+      }
+    }
+  },
+  "services": {
+    "request_restart": {
+      "name": "Request restart",
+      "description": "Schedules a Home Assistant restart at the next configured restart time.",
+      "fields": {
+        "reason": {
+          "name": "Reason",
+          "description": "Optional description of why the restart is needed."
+        }
+      }
+    },
+    "cancel_restart": {
+      "name": "Cancel restart",
+      "description": "Cancels a previously requested scheduled restart."
+    }
+  },
+  "exceptions": {
+    "no_config_entry": {
+      "message": "No Scheduled Restart configuration found. Set up the integration first."
+    },
+    "integration_not_loaded": {
+      "message": "The Scheduled Restart integration is not loaded."
+    },
+    "no_restart_pending": {
+      "message": "There is no restart currently scheduled."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+rules:
+  # Bronze
+  action-setup: done
+  appropriate-polling:
+    status: exempt
+    comment: Integration does not poll any external resource.
+  brands: done
+  common-modules:
+    status: exempt
+    comment: No coordinator or base entity needed for this single-entity integration.
+  config-flow: done
+  config-flow-test-coverage: done
+  dependency-transparency:
+    status: exempt
+    comment: Integration has no external dependencies.
+  docs-actions: todo
+  docs-high-level-description: todo
+  docs-installation-instructions: todo
+  docs-removal-instructions: todo
+  entity-event-setup: done
+  entity-unique-id: done
+  has-entity-name: done
+  runtime-data: done
+  test-before-configure:
+    status: exempt
+    comment: Integration does not connect to any external device or service.
+  test-before-setup:
+    status: exempt
+    comment: Integration does not connect to any external device or service.
+  unique-config-entry: done
+
+  # Silver
+  config-entry-unloading: done
+  entity-unavailable:
+    status: exempt
+    comment: The binary sensor is always available as it only reflects in-memory state.
+  log-when-unavailable:
+    status: exempt
+    comment: Integration does not connect to any external resource.
+  parallel-updates:
+    status: exempt
+    comment: Integration uses a single push-based entity with no polling.
+  reauthentication-flow:
+    status: exempt
+    comment: Integration does not require authentication.
+  test-coverage: done

@@ -1,0 +1,11 @@
+{
+  "domain": "scheduled_restart",
+  "name": "Scheduled Restart",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/scheduled_restart",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "quality_scale": "silver",
+  "single_config_entry": true
+}
